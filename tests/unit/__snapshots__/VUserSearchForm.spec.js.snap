@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VUserSearchForm renders the component 1`] = `
+<form>
+  <input type="text">
+  <button type="submit">Pesquisar</button>
+</form>
+`;
