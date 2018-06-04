@@ -1,5 +1,6 @@
 jest.mock('@/store/actions')
 import { shallowMount, createLocalVue } from '@vue/test-utils'
+import ElementUI from 'element-ui'
 import Vuex from 'vuex'
 import state from '@/store/state'
 import actions from '@/store/actions'
@@ -10,6 +11,7 @@ import user from './fixtures/user'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
+localVue.use(ElementUI)
 
 describe('TheUserView', () => {
 

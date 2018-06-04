@@ -23,9 +23,19 @@ export default {
 </script>
 
 <template>
-  <div>
-    <VUserSearchForm :search="searchUser" />
-    <VUserProfile :user="user" />
-  </div>
+  <el-card class="box-card">
+    <div slot="header">
+      <VUserSearchForm :search="searchUser" />
+    </div>
+
+    <div>
+      <VUserProfile :user="user" />
+    </div>
+  </el-card>
 </template>
 
+<style scoped>
+.box-card {
+  flex: 1;
+}
+</style>

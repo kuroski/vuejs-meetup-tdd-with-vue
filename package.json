@@ -9,6 +9,7 @@
     "test:unit": "vue-cli-service test:unit --watch"
   },
   "dependencies": {
+    "element-ui": "^2.4.0",
     "vue": "^2.5.16",
     "vuex": "^3.0.1"
   },

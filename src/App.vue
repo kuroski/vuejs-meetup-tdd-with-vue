@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-  <div id="app">
+  <el-container>
     <TheUserView />
-  </div>
+  </el-container>
 </template>

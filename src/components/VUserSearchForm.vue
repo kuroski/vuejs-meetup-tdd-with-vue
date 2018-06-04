@@ -17,7 +17,16 @@ export default {
 
 <template>
   <form @submit.prevent="search(term)">
-    <input type="text" v-model="term" />
-    <button type="submit">Pesquisar</button>
+    <el-input
+      placeholder="Pesquise o usuário"
+      v-model="term"
+      class="input-with-select"
+    >
+      <el-button
+        class="submit"
+        native-type="submit"
+        slot="append"
+        icon="el-icon-search"></el-button>
+    </el-input>
   </form>
 </template>

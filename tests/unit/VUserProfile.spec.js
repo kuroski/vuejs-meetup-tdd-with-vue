@@ -11,8 +11,8 @@ describe('VUserProfile', () => {
     })
     return {
       wrapper,
-      avatar: () => wrapper.find('img'),
-      name: () => wrapper.find('.name')
+      avatar: () => wrapper.find('.user-profile__avatar'),
+      name: () => wrapper.find('.user-profile__name')
     }
   }
 

@@ -1,5 +1,9 @@
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
+import ElementUI from 'element-ui'
 import VUserSearchForm from '@/components/VUserSearchForm'
+
+let localVue = createLocalVue()
+localVue.use(ElementUI)
 
 describe('VUserSearchForm', () => {
   let props
@@ -7,11 +11,12 @@ describe('VUserSearchForm', () => {
   const build = () => {
     const wrapper = shallowMount(VUserSearchForm, {
       propsData: props,
+      localVue,
     })
     return {
       wrapper,
-      input: () => wrapper.find('input'),
-      button: () => wrapper.find('button'),
+      input: () => wrapper.find('.input-with-select'),
+      button: () => wrapper.find('.submit'),
     }
   }
 
@@ -39,10 +44,12 @@ describe('VUserSearchForm', () => {
   it('calls search function with search term on submit', () => {
     // arranje
     const expectedUser = 'kuroki'
-    const { input, button } = build()
+    const { wrapper, button } = build()
+    wrapper.setData({
+      term: expectedUser
+    })
+
     // act
-    input().element.value = expectedUser
-    input().trigger('input')
     button().trigger('click')
     button().trigger('submit')
     // assert
